@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise</title>
+</head>
+<body>
+  <h1>Heading with a <span>span</span> element.</h1>
+  <p>A paragraph with <span>one</span>, <span>two</span>
+    spans.</p>
+</body>
+</html>
+
+<script>
+
+byTagName = (node, tagName) => {
+  let elementsArray = []
+  if (node.nodeType === Node.ELEMENT_NODE) {
+    console.log('tagName: ', tagName)
+    for (let i = 0; i < node.childNodes.length; i++) {
+      console.log('element: ', node.childNodes[i])
+
+      // The conditional doesn't seem to pass, although my console.log finds the same tagName as one of the elements...
+      if (node.childNodes[i] === tagName) {
+        elementsArray.push(node.childNodes[i])
+        console.log('conditional passed')
+      }
+    } return elementsArray
+  } else {
+    console.log('not working')
+  }
+}
+
+byTagName(document.body, "h1")
+</script>
