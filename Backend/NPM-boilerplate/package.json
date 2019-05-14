@@ -2,13 +2,16 @@
   "name": "random-number-CMD-BE",
   "version": "1.0.0",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "description": "This package will return a random number between two numbres",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Coenmathijssen/NPM-boilerplate.git"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
   },
   "dependencies": {
     "convert-string-to-number": "^1.0.3"
