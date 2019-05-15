@@ -13,21 +13,42 @@
 
 <script>
 
-byTagName = (node, tagName) => {
-  let elementsArray = []
-  if (node.nodeType === Node.ELEMENT_NODE) {
-    console.log('tagName: ', tagName)
-    for (let i = 0; i < node.childNodes.length; i++) {
-      console.log('element: ', node.childNodes[i])
+// byTagName = (node, tagName) => {
+//   let elementsArray = []
+//   if (node.nodeType === Node.ELEMENT_NODE) {
+//     console.log('tagName: ', tagName)
+//     for (let i = 0; i < node.childNodes.length; i++) {
+//       console.log('element: ', node.childNodes[i])
 
-      // The conditional doesn't seem to pass, although my console.log finds the same tagName as one of the elements...
-      if (node.childNodes[i] === tagName) {
-        elementsArray.push(node.childNodes[i])
-        console.log('conditional passed')
+//       // The conditional doesn't seem to pass, although my console.log finds the same tagName as one of the elements...
+//       if (node.childNodes.nodeName.toLowerCase()[i] === tagName) {
+//         elementsArray.push(node.childNodes[i])
+//         console.log('conditional passed')
+//       }
+//     } return elementsArray
+//   } else {
+//     console.log('not working')
+//   }
+// }
+
+const byTagName = (node, tagName) => {
+  const selectedTagElements = []
+  checkTagName(node, tagName)
+
+  return selectedTagElements
+
+  function checkTagName (node, tagName) {
+    const currentTagName = node.nodeName.toLowerCase()
+    const children = node.children
+
+    if (currentTagName === tagName) {
+      selectedTagElements.push(node)
+    }
+    if (children) {
+      for (let index = 0; index < children.length; index++) {
+        checkTagName(children[index], tagName)
       }
-    } return elementsArray
-  } else {
-    console.log('not working')
+    }
   }
 }
 
