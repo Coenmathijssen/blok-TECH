@@ -13,7 +13,7 @@ app.set('views', path.join(__dirname, 'views'))
 // // ***********COMMENTED OUT, BECAUSE EJS IS NOT WORKING IN COMBINATION WITH STATIC******
 // app.use(express.static(path.join(__dirname, 'static')))
 
-// Testing the dynamicly rendered content, for example: objects:
+// Testing the dynamically rendered content, for example: objects:
 const users = [
   {
     id: 1,
