@@ -5,6 +5,9 @@ const path = require('path')
 const app = express()
 const port = 3000
 
+// Know which port Express is using
+app.listen(port, () => console.log(`Listining to this port: ${port}!`))
+
 // View Engine init
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
@@ -45,9 +48,6 @@ app.get('/about', (req, res) => {
     users: users
   })
 })
-
-// Know which port Express is using
-app.listen(port, () => console.log(`Listining to this port: ${port}!`))
 
 // Handling the 404 error page
 app.get('*', function (req, res) {
