@@ -9,9 +9,8 @@ const port = 3000
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
-// //  Serve html, css and js files in the static directory
-// // ***********COMMENTED OUT, BECAUSE EJS IS NOT WORKING IN COMBINATION WITH STATIC******
-// app.use(express.static(path.join(__dirname, 'static')))
+//  Serve html, css and js files in the static directory
+app.use(express.static(path.join(__dirname, 'static')))
 
 // Testing the dynamically rendered content, for example: objects:
 const users = [
@@ -35,6 +34,14 @@ const users = [
 app.get('/', (req, res) => {
   res.render('index', {
     title: 'This title is dynamicly rendered',
+    titleSecond: 'This is a second title',
+    users: users
+  })
+})
+
+app.get('/about', (req, res) => {
+  res.render('about', {
+    titleSecond: 'This is a second title',
     users: users
   })
 })
