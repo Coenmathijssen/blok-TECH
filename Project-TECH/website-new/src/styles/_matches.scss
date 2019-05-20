@@ -69,20 +69,20 @@
               position: absolute;
 
               &:first-of-type {
-                left: 35px;
+                left: 28px;
                 top: 10px;
 
                 &::before {
                   position: absolute;
                   display: inline-block;
-                  left: -25px;
-                  top: -3px;
+                  left: -20px;
+                  top: -2px;
                   content: '';
                   background-image: url(../images/icons/text-blue.svg);
-                  background-size: 22px 17px;
+                  background-size: 18px 13px;
                   background-repeat: no-repeat;
-                  height: 19px;
-                  width: 24px;
+                  height: 14px;
+                  width: 18px;
                 }
               }
 
@@ -93,14 +93,14 @@
                 &::before {
                   position: absolute;
                   display: inline-block;
-                  left: -17px;
-                  top: -3px;
+                  left: -10px;
+                  top: -1px;
                   content: '';
-                  background-image: url(../images/icons/location.svg);
-                  background-size: 13px 17px;
+                  background-image: url("../images/icons/location.svg");
+                  background-size: 8px 12px;
                   background-repeat: no-repeat;
-                  height: 17px;
-                  width: 13px;
+                  height: 14px;
+                  width: 10px;
                 }
               }
             }
