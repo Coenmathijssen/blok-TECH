@@ -1,0 +1,13 @@
+<!doctype html>
+<link rel=stylesheet href=/index.css>
+<title>List of users</title>
+<h1><%= title %></h1>
+
+<ul>
+<% userDatabase.forEach((user) => {%>
+<li>First name: <%= user.firstName %></li>
+<li>Last name: <%= user.lastName %></li>
+<li>Email: <%= user.email %></li>
+<br>
+<% }) %>
+</ul>

@@ -30,41 +30,30 @@ app.use((req, res, next) => {
 //  Express validator middleware
 app.use(expressValidator())
 
-// Testing the dynamically rendered content, for example: objects:
-const users = [
-  {
-    id: 1,
-    firstName: 'John',
-    lastName: 'Flex'
-  },
-  {
-    id: 2,
-    firstName: 'Ronald',
-    lastName: 'de Boer'
-  },
-  {
-    id: 4,
-    firstName: 'Gerard',
-    lastName: 'Ekdom'
-  }
-]
-
+// Render the right pages and data per page
 app.get('/', (req, res) => {
   res.render('index', {
     title: 'Hello world',
-    titleSecond: 'This is a second title',
-    users: users
+    titleSecond: 'This is a second title'
   })
 })
 
 app.get('/about', (req, res) => {
   res.render('about', {
-    titleSecond: 'This is a second title',
-    users: users
+    title: 'This is the about page'
+  })
+})
+
+app.get('/users', (req, res) => {
+  res.render('users', {
+    title: 'A list of users',
+    userDatabase: userDatabase
   })
 })
 
 // Catch the form submission
+const userDatabase = []
+
 app.post('/users/add', (req, res) => {
   // Error handling with Express validator
   req.checkBody('firstName', 'Please fill in your First Name').notEmpty()
@@ -77,7 +66,6 @@ app.post('/users/add', (req, res) => {
     res.render('index', {
       title: 'Hello world',
       titleSecond: 'This is a second title',
-      users: users,
       errors: errors
     })
   } else {
@@ -86,7 +74,8 @@ app.post('/users/add', (req, res) => {
       lastName: req.body.lastName,
       email: req.body.email
     }
-    console.log(newUser)
+    userDatabase.push(newUser)
+    res.json({ status: 'New user added to database' })
   }
 })
 
