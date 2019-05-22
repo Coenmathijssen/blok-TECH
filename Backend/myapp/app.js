@@ -2,6 +2,8 @@ const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
 const expressValidator = require('express-validator')
+const mongojs = require('mongojs')
+const db = mongojs('database', ['users'])
 
 // Init Express
 const app = express()
@@ -45,9 +47,12 @@ app.get('/about', (req, res) => {
 })
 
 app.get('/users', (req, res) => {
-  res.render('users', {
-    title: 'A list of users',
-    userDatabase: userDatabase
+  db.users.find((err, docs) => {
+    res.render('users', {
+      title: 'A list of users',
+      userDatabase: userDatabase,
+      users: docs
+    })
   })
 })
 
@@ -74,7 +79,12 @@ app.post('/users/add', (req, res) => {
       lastName: req.body.lastName,
       email: req.body.email
     }
-    userDatabase.push(newUser)
+    // userDatabase.push(newUser)
+    db.users.insert(newUser, (err, res) => {
+      if (err) {
+        console.log(err)
+      }
+    })
     res.json({ status: 'New user added to database' })
   }
 })

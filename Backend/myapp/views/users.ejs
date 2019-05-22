@@ -11,3 +11,13 @@
 <br>
 <% }) %>
 </ul>
+
+<h1>A list of users from mongoDB</h1>
+<ul>
+<% users.forEach((user) => {%>
+<li>First name: <%= user.firstName %></li>
+<li>Last name: <%= user.lastName %></li>
+<li>Email: <%= user.email %></li>
+<br>
+<% }) %>
+</ul>
