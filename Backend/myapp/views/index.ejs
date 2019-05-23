@@ -1,27 +1,93 @@
-<% include partials/header %>
-  <h1>Let's create a fresh account for you </h1>
-  <% if (errors != undefined) { %>
-    <ul>
-      <% errors.forEach((error) => {%>
-        <li><%= error.msg %></li>
-      <% }) %>
-    </ul>
-  <% } %>
-  <form method="POST" action="/users/add">
-    <label for="firstName">First name</label>
-    <input id="firstName" type="text" name="firstName">
-    <br>
-    <label for="lastName">Last name</label>
-    <input id="lastName" type="text" name="lastName">
-    <br>
-    <label for="email">Email</label>
-    <input id="email" type="text" name="email">
-    <br>
-    <input type="submit" value="submit">
-  </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homescreen - Dating app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../styles/_homescreen.css">
+</head>
+<body>
 
-<h1><%= title %></h1>
-<img src="/uploads/cat.jpeg" alt="cat">
+    <div class="homescreen">
+        <nav class="header-nav">
+            <a href="./index.html" class="link">
+                <h2 class="title-m white">Ontdek</h2>
+            </a>
+            <a href="#" class="link">
+                <h2 class="title-m white">In de buurt</h2>
+            </a>
+        </nav>
+
+        <main>
+            <div class="top-info">
+                <div class="name">
+                    <h1 class="title-xl black">Nena de Vries</h1>
+                    <h3 class="title-s black">Syndroom van down</h3>
+                </div>
+                <div class="info">
+                    <p class="title-xl">22 jr.</p>
+                    <p class="body-s">9km</p>
+                </div>
+            </div>
+            <img src="./images/girl.png" alt="A picture of a smiling girl">
+            <article>
+                <div class="about">
+                    <div class="first-list">
+                        <h1 class="title-l blue">Hobby's</h1>
+                        <ul>
+                            <li class="body-m tv">Series kijken</li>
+                            <li class="body-m music">Muziek</li>
+                            <li class="body-m shopping">Kleding kopen</li>
+                        </ul>
+                    </div>
+                    <div class="second-list">
+                        <h1 class="title-l blue">Eigenschappen</h1>
+                        <ul>
+                            <li class="body-m">Extrovert</li>
+                            <li class="body-m">Gevoel voor humor</li>
+                            <li class="body-m">Erg geduldig</li>
+                            <li class="body-m">Brede interesses</li>
+                        </ul>
+                    </div>
+                </div>
+                <h2 class="title-s blue">Swipe voor profiel</h2>
+            </article>
+            <nav class="profiles-nav">
+                <a href="#">
+                    <img src="./images/icons/text.svg" alt="Button to start a conversation">
+                </a>
+                <a href="#">
+                    <img src="./images/icons/heart.svg" alt="Button to like this person">
+                </a>
+                <a href="#">
+                    <img src="./images/icons/cross.svg" alt="Button to move over to the next person">
+                </a>
+            </nav>
+        </main>
+    </div>
+
+    <h1>Let's create a fresh account for you </h1>
+        <% if (errors != undefined) { %>
+    <ul>
+        <% errors.forEach((error) => {%>
+            <li><%= error.msg %></li>
+        <% }) %>
+    </ul>
+    <% } %>
+    <form method="POST" action="/users/add">
+        <label for="firstName">First name</label>
+        <input id="firstName" type="text" name="firstName">
+        <br>
+        <label for="lastName">Last name</label>
+        <input id="lastName" type="text" name="lastName">
+        <br>
+        <label for="email">Email</label>
+        <input id="email" type="text" name="email">
+        <br>
+        <input type="submit" value="submit">
+    </form>
+
+    <h1><%= title %></h1>
 <% include partials/footer %>
 
 
