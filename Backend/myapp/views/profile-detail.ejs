@@ -1,0 +1,61 @@
+<% include partials/header %>
+    <link rel="stylesheet" href="styles/_profile-detail.css">
+</head>
+<body class="profile-detail">
+    <% include partials/top-navbar %>
+
+    <div class="container">
+        <nav>
+            <a href="./profile-overview.html" class="title-m"><span><img src="../images/icons/back.svg" alt="A back button for returning to the previous page"></span>Terug naar het vorige scherm</a>
+        </nav>
+
+        <main>
+            <form>
+                <label for="name">Mijn naam is</label>
+                <input id="name" type="text" name="name">
+
+                <div class="toggle">
+                    <label for="toggle">Ik ben een</label>
+                    <input id="boy" type="radio" class="tab" name="tab">
+                    <label class="label first" for="boy" class="radio-inline">Jongen</label>
+                    <input id="girl" type="radio" class="tab" name="tab">
+                    <label class="label" for="girl" class="radio-inline">Meisje</label>
+                    <input id="both" type="radio" class="tab" name="tab">
+                    <label class="label last" for="both" class="radio-inline">Beide</label>
+                </div>
+
+                <label for="adress">Ik woon in</label>
+                <input id="adress" type="text" name="adress">
+                <label for="email">Mijn email-adres is</label>
+                <input id="email" type="text" name="email">
+                <label for="phone">Mijn telefoonnummer is</label>
+                <input id="phone" type="text" name="phone">
+
+                <label for="select">Ik heb de volgende beperking</label>
+                <select id="select" name="">
+                    <option value="autism">Autisme</option>
+                    <option value="down">Syndroom van down</option>
+                    <option value="fysical-arm">Fysieke beperkingen in arm(en)</option>
+                    <option value="fysical-leg">Fysieke beperkingen in be(e)n(en)</option>
+                    <option value="manic">Manisch</option>
+                </select>
+
+                <label for="hobbies">Mijn hobby's zijn</label>
+                <textarea id="hobbies" name="textarea" rows="5"></textarea>
+
+                <label for="hobbies">Over mijzelf</label>
+                <textarea id="hobbies" name="textarea" rows="5"></textarea>
+
+                <div class="toggle personality">
+                    <label for="toggle">Ik ben of ... of ...</label>
+                    <input id="introvert" type="radio" class="tab" name="tab">
+                    <label class="label first" for="introvert" class="radio-inline">Introvert</label>
+                    <input id="extrovert" type="radio" class="tab" name="tab">
+                    <label class="label last" for="extrovert" class="radio-inline">Extrovert</label>
+                </div>
+
+            <input type="submit" value="Wijzigingen opslaan">
+            </form>
+        </main>
+    </div>
+<% include partials/footer %>

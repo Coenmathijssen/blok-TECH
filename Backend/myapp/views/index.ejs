@@ -1,57 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Homescreen - Dating app</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <% include partials/header %>
     <link rel="stylesheet" href="../../styles/_homescreen.css">
 </head>
 <body>
-
     <div class="homescreen">
-        <nav class="header-nav">
-            <a href="./index.html" class="link">
-                <h2 class="title-m white">Ontdek</h2>
-            </a>
-            <a href="#" class="link">
-                <h2 class="title-m white">In de buurt</h2>
-            </a>
-        </nav>
-
+        <% include partials/top-navbar %>
         <main>
-            <div class="top-info">
-                <div class="name">
-                    <h1 class="title-xl black">Nena de Vries</h1>
-                    <h3 class="title-s black">Syndroom van down</h3>
-                </div>
-                <div class="info">
-                    <p class="title-xl">22 jr.</p>
-                    <p class="body-s">9km</p>
-                </div>
-            </div>
-            <img src="./images/girl.png" alt="A picture of a smiling girl">
-            <article>
-                <div class="about">
-                    <div class="first-list">
-                        <h1 class="title-l blue">Hobby's</h1>
-                        <ul>
-                            <li class="body-m tv">Series kijken</li>
-                            <li class="body-m music">Muziek</li>
-                            <li class="body-m shopping">Kleding kopen</li>
-                        </ul>
-                    </div>
-                    <div class="second-list">
-                        <h1 class="title-l blue">Eigenschappen</h1>
-                        <ul>
-                            <li class="body-m">Extrovert</li>
-                            <li class="body-m">Gevoel voor humor</li>
-                            <li class="body-m">Erg geduldig</li>
-                            <li class="body-m">Brede interesses</li>
-                        </ul>
-                    </div>
-                </div>
-                <h2 class="title-s blue">Swipe voor profiel</h2>
-            </article>
+            <% include partials/profile-card %>
             <nav class="profiles-nav">
                 <a href="#">
                     <img src="./images/icons/text.svg" alt="Button to start a conversation">
