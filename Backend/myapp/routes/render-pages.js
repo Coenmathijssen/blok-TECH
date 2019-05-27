@@ -16,6 +16,8 @@ router.get('/', (req, res) => {
     title: 'Homescreen',
     firstLink: 'Ontdek', // Top nav menu item
     secondLink: 'In de buurt',
+    firstAnchor: '../', // Top nav menu anchor links
+    secondAnchor: '../',
     name: 'Nena de Vries', // Profile card info
     disability: 'Syndroom van down',
     age: '22 jr.',
@@ -29,6 +31,8 @@ router.get('/matches', (req, res) => {
     title: 'Matches',
     firstLink: 'Alle matches', // Top nav menu item
     secondLink: 'Berichten',
+    firstAnchor: '../matches', // Top nav menu anchor links
+    secondAnchor: '../messages',
     name1: 'Nena de Vries', // The names of all the overview cards in matches,
     name2: 'Nora Goedhoudt',
     name3: 'Frederique Veenstra',
@@ -43,7 +47,9 @@ router.get('/messages', (req, res) => {
   res.render('messages', {
     title: 'Messages',
     firstLink: 'Alle matches', // Top nav menu item
-    secondLink: 'Berichten'
+    secondLink: 'Berichten',
+    firstAnchor: '../matches', // Top nav menu anchor links
+    secondAnchor: '../messages'
   })
 })
 
@@ -52,7 +58,9 @@ router.get('/profile-overview', (req, res) => {
   res.render('profile-overview', {
     title: 'Profile overview',
     firstLink: 'Ik ben', // Top nav menu item
-    secondLink: 'Ik ben opzoek naar'
+    secondLink: 'Ik ben opzoek naar',
+    firstAnchor: '../profile-overview', // Top nav menu anchor links
+    secondAnchor: '../profile-overview'
   })
 })
 
@@ -61,7 +69,9 @@ router.get('/profile-detail', (req, res) => {
   res.render('profile-detail', {
     title: 'Profile detail',
     firstLink: 'Ik ben', // Top nav menu item
-    secondLink: 'Ik ben opzoek naar'
+    secondLink: 'Ik ben opzoek naar',
+    firstAnchor: '../profile-overview', // Top nav menu anchor links
+    secondAnchor: '../profile-overview'
   })
 })
 
