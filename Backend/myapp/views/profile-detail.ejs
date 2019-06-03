@@ -10,29 +10,40 @@
         </nav>
 
         <main>
-            <form>
-                <label for="name">Mijn naam is</label>
-                <input id="name" type="text" name="name">
+            <form method="POST" action="/update">
+                <label for="id">id</label>
+                <input id="id" type="text" name="id" value="<%= userData._id %>" readonly>
+
+                <label for="firstName">Voornaam</label>
+                <input id="firstName" type="text" name="firstName" placeholder="<%= userData.firstName %>">
+
+                <label for="lastName">Achternaam</label>
+                <input id="lastName" type="text" name="lastName" placeholder="<%= userData.lastName %>">
+
+                <label for="email">Email</label>
+                <input id="email" type="text" name="email" placeholder="<%= userData.email %>">
+
+                <label for="password">Wachtwoord</label>
+                <input id="password" type="text" name="password" placeholder="<%= userData.password %>">
 
                 <div class="toggle">
                     <label for="toggle">Ik ben een</label>
-                    <input id="boy" type="radio" class="tab" name="tab">
-                    <label class="label first" for="boy" class="radio-inline">Jongen</label>
-                    <input id="girl" type="radio" class="tab" name="tab">
-                    <label class="label" for="girl" class="radio-inline">Meisje</label>
-                    <input id="both" type="radio" class="tab" name="tab">
+                    <input id="boy" type="radio" class="tab" name="tab" value="man">
+                    <label class="label first" for="boy" class="radio-inline">Man</label>
+                    <input id="girl" type="radio" class="tab" name="tab" value="vrouw">
+                    <label class="label" for="girl" class="radio-inline">Vrouw</label>
+                    <input id="both" type="radio" class="tab" name="tab" value="beide">
                     <label class="label last" for="both" class="radio-inline">Beide</label>
                 </div>
 
+                <label for="age">Ik ben ... jaar</label>
+                <input id="age" type="text" name="age" placeholder="<%= userData.age %>">
+
                 <label for="adress">Ik woon in</label>
-                <input id="adress" type="text" name="adress">
-                <label for="email">Mijn email-adres is</label>
-                <input id="email" type="text" name="email">
-                <label for="phone">Mijn telefoonnummer is</label>
-                <input id="phone" type="text" name="phone">
+                <input id="adress" type="text" name="adress" placeholder="<%= userData.address %>">
 
                 <label for="select">Ik heb de volgende beperking</label>
-                <select id="select" name="">
+                <select id="select" name="disability">
                     <option value="autism">Autisme</option>
                     <option value="down">Syndroom van down</option>
                     <option value="fysical-arm">Fysieke beperkingen in arm(en)</option>
@@ -41,18 +52,10 @@
                 </select>
 
                 <label for="hobbies">Mijn hobby's zijn</label>
-                <textarea id="hobbies" name="textarea" rows="5"></textarea>
+                <textarea id="hobbies" name="hobbies" rows="5" placeholder="<%= userData.hobbies %>"></textarea>
 
-                <label for="hobbies">Over mijzelf</label>
-                <textarea id="hobbies" name="textarea" rows="5"></textarea>
-
-                <div class="toggle personality">
-                    <label for="toggle">Ik ben of ... of ...</label>
-                    <input id="introvert" type="radio" class="tab" name="tab">
-                    <label class="label first" for="introvert" class="radio-inline">Introvert</label>
-                    <input id="extrovert" type="radio" class="tab" name="tab">
-                    <label class="label last" for="extrovert" class="radio-inline">Extrovert</label>
-                </div>
+                <label for="about">Over mijzelf</label>
+                <textarea id="about" name="about" rows="5" placeholder="<%= userData.about %>"></textarea>
 
                 <input type="submit" value="Wijzigingen opslaan">
             </form>

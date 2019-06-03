@@ -8,12 +8,12 @@
         <section>
             <img src="images/boy.png" alt="Picture of a guy with glasses">
             <div class="info-overview">
-                <h1 class="title-xl black">Jeroen van Assem</h1>
+                <h1 class="title-xl black"><%= userData.firstName %> <%= userData.lastName %></h1>
                 <ul>
-                    <li class="body-m">22 jr.</li>
+                    <li class="body-m"><%= userData.age %> jr.</li>
                     <li class="body-m">6 foto's</li>
                     <li class="body-m">31 matches</li>
-                    <li class="body-m">Ziekte van autisme</li>
+                    <li class="body-m"><%= userData.disability %></li>
                 </ul>
             </div>
         </section>
@@ -35,7 +35,7 @@
             <span><img src="../images/icons/view-settings.svg" alt="Icon for settings"></span>
         </a>
 
-        <a href="#" class="button third">Uitloggen
+        <a href="/logout" class="button third">Uitloggen
             <span><img src="../images/icons/log-out.svg" alt="Icon for signing out"></span>
         </a>
     </div>

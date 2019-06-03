@@ -30,7 +30,8 @@ footer, header, hgroup, menu, nav, section {
   display: block; }
 
 body {
-  line-height: 1; }
+  line-height: 1;
+  height: calc(100vh + 80px) !important; }
 
 ol, ul {
   list-style: none; }
@@ -49,7 +50,6 @@ table {
 
 html,
 body {
-  height: calc(100% + 80px) !important;
   background-color: #EDECE9 !important; }
 
 html {

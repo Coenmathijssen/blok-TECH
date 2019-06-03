@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const User = require('./user-schema')
-// const session = require('express-session')
 
 router.get('/delete', (req, res) => {
   const id = req.session.userData._id

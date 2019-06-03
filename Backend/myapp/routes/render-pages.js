@@ -3,10 +3,7 @@
 // Render the right pages and data per page
 const express = require('express')
 const router = express.Router()
-const mongoose = require('mongoose')
 const User = require('./user-schema')
-
-const session = require('express-session')
 
 // Rendering homescreen
 router.get('/', (req, res) => {
@@ -81,7 +78,8 @@ router.get('/profile-overview', (req, res) => {
       firstLink: 'Ik ben', // Top nav menu item
       secondLink: 'Ik ben opzoek naar',
       firstAnchor: '../profile-overview', // Top nav menu anchor links
-      secondAnchor: '../profile-overview'
+      secondAnchor: '../profile-overview',
+      userData: req.session.userData
     })
   }
 })
@@ -93,12 +91,15 @@ router.get('/profile-detail', (req, res) => {
     res.status(401).send()
     res.redirect('/login')
   } else {
-    res.render('profile-detail', {
-      title: 'Profile detail',
-      firstLink: 'Ik ben', // Top nav menu item
-      secondLink: 'Ik ben opzoek naar',
-      firstAnchor: '../profile-overview', // Top nav menu anchor links
-      secondAnchor: '../profile-overview'
+    User.find({}, (err, docs) => {
+      res.render('profile-detail', {
+        title: 'Messages',
+        firstLink: 'Alle matches', // Top nav menu item
+        secondLink: 'Berichten',
+        firstAnchor: '../matches', // Top nav menu anchor links
+        secondAnchor: '../messages',
+        userData: req.session.userData
+      })
     })
   }
 })
@@ -131,7 +132,7 @@ router.get('/dashboard', (req, res) => {
   } else {
     console.log(`You're succesfully logged in!`)
     res.status(200).send()
-    res.redirect('/user')
+    res.redirect('/profile-overview')
   }
 })
 
@@ -174,12 +175,12 @@ router.get('*', function (req, res) {
   res.status(404).send('<h1>I`m sorry, the page you were looking for is not here <br> 404</h1>')
 })
 
-router.use(session({
-  resave: false,
-  saveUninitialized: true,
-  secret: 'xxxx',
-  port: 3000,
-  secure: false
-}))
+// router.use(session({
+//   resave: false,
+//   saveUninitialized: true,
+//   secret: 'xxxx',
+//   port: 3000,
+//   secure: false
+// }))
 
 module.exports = router

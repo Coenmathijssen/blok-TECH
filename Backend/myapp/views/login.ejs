@@ -2,31 +2,20 @@
     <link rel="stylesheet" href="styles/_login.css">
 </head>
 <body class="login">
-    <div class="privacy">
-        <h2 class="title-l">Privacy disclaimer!</h2>
-        <p class="body-s">Wij respecteren jouw privacy en snappen dat alle opgegeven informatie gevoelig is. Daarom versleutelen wij alle data met een 2048-bit RSA encryptie. Daarnaast zullen jouw gegevens nooit worden gebruikt voor iets anders dan het verbeteren van deze app.</p>
-    </div>
     <div class="container">
-        <h1 class="title-xl">Inloggen in jouw account.</h1>
-        <a>Nog geen account? Klik dan hier</a>
-
-        <h1>Let's create a fresh account for you </h1>
-        <% if (errors != undefined) { %>
-            <ul>
-                <% errors.forEach((error) => {%>
-                    <li><%= error.msg %></li>
-                <% }) %>
-            </ul>
-        <% } %>
+        <img src="./images/logo-white.svg" alt="Logo I'm down.">
+        <h1 class="title-xl">Goed om je terug te zien.</h1>
+        <p class="body-m">Log in om verder te gaan.</p>
         <form method="POST" action="/login">
             <label for="email">Email</label>
             <input id="email" type="text" name="email">
             <br>
             <label for="password">Password</label>
-            <input id="password" type="text" name="password">
+            <input id="password" type="password" name="password">
             <br>
-            <input type="submit" value="submit">
+            <input type="submit" value="Log In">
         </form>
+        <a href="/create-account" class="body-m">Nog geen account? <span>Klik dan hier</span></a>
     </div>
 </body>
 </html>

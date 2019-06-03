@@ -35,20 +35,27 @@ app.use((req, res, next) => {
 //  Express validator middleware
 app.use(expressValidator())
 
+// Session init
 app.use(session({ secret: process.env.SESSION_KEY, resave: false, saveUninitialized: true }))
 
+app.use(session({
+  resave: false,
+  saveUninitialized: true,
+  secret: process.env.SESSION_KEY,
+  port: 3000,
+  secure: false
+}))
+
 // Import and use multiple route js files and use them in the app.js
-const errorRoute = require('./routes/add-to-database.js')
 const register = require('./routes/register.js')
 const login = require('./routes/login.js')
 const logout = require('./routes/logout.js')
 const update = require('./routes/update.js')
 const deleteUser = require('./routes/delete.js')
-const router = require('./routes/render-pages.js')
-app.use(errorRoute)
+const renderPages = require('./routes/render-pages.js')
 app.use(register.router)
 app.use(login)
 app.use(logout)
 app.use(update)
 app.use(deleteUser)
-app.use(router)
+app.use(renderPages)
