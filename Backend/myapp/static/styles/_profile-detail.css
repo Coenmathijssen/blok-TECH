@@ -735,18 +735,28 @@ footer .navigation {
   margin: auto 1em;
   width: calc(100% - 2em); }
   .profile-detail .container nav {
-    padding: 5vh 0 3vh; }
+    display: flex;
+    padding: 2vh 1em 2vh;
+    justify-content: space-between; }
     .profile-detail .container nav a {
       position: relative;
       font-family: Nexa Light, Arial, sans-serif;
-      padding: 32px 0 32px 95px; }
+      display: flex; }
       .profile-detail .container nav a span {
-        position: absolute;
-        left: 20px;
-        top: 5px;
-        padding: 1em 1.5em;
+        position: relative;
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin-right: 5px;
         background-color: #5BB8B8;
-        border-radius: 16px; }
+        border-radius: 16%; }
+        .profile-detail .container nav a span img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+      .profile-detail .container nav a:last-of-type span {
+        background-color: #E60000; }
 
 form {
   margin: 0 auto 10vh;

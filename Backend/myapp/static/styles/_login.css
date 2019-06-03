@@ -436,6 +436,10 @@ table {
       transition: all 0.3s; }
       .login form input[type="submit"]:hover, .login form input[type="submit"]:active {
         box-shadow: none; }
+    .login form input:focus,
+    .login form textarea:focus {
+      box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.3);
+      border: solid 2px #F39CA9; }
   .login a:last-of-type {
     margin-top: 5vh;
     color: #FFFFFF;

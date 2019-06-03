@@ -1,9 +1,7 @@
 const express = require('express')
 const router = express.Router()
-
+const argon2 = require('argon2')
 const User = require('./user-schema')
-
-let emailRegister = null
 
 // register new user
 router.post('/register', (req, res) => {
@@ -11,7 +9,7 @@ router.post('/register', (req, res) => {
   newuser.firstName = req.body.firstName
   newuser.lastName = req.body.lastName
   newuser.email = req.body.email
-  newuser.password = req.body.password
+  newuser.password = await argon2.hash(req.body.password)
   newuser.disability = req.body.disability
   newuser.gender = req.body.tab
   newuser.address = req.body.address

@@ -10,7 +10,8 @@ router.get('/delete', (req, res) => {
       res.status(500).send()
     } else {
       console.log('User removed')
-      return res.status(200).send()
+      res.status(200).send()
+      res.redirect('/logout')
     }
   })
 })
