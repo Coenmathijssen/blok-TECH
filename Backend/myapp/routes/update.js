@@ -31,7 +31,14 @@ router.post('/update', (req, res) => {
             console.log(err)
             res.status(500).send()
           } else {
-            res.send(updatedObject)
+            res.render('user', {
+              userData: updatedObject,
+              title: 'Messages',
+              firstLink: 'Alle matches', // Top nav menu item
+              secondLink: 'Berichten',
+              firstAnchor: '../matches', // Top nav menu anchor links
+              secondAnchor: '../messages'
+            })
           }
         })
       }
