@@ -1,13 +1,15 @@
+require('dotenv').config()
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
 const expressValidator = require('express-validator')
-const mongojs = require('mongojs')
-const db = mongojs('database', ['users'])
+const mongoose = require('mongoose')
+const session = require('express-session')
+mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.DATABASE_NAME, { useNewUrlParser: true })
 
 // Init Express
 const app = express()
-const port = 3000
+const port = process.env.PORT
 
 // Know which port Express is using
 app.listen(port, () => console.log(`Listining to this port: ${port}!`))
@@ -26,14 +28,27 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // Global variables
 app.use((req, res, next) => {
   res.locals.errors = null
+  res.locals.userid = null
   next()
 })
 
 //  Express validator middleware
 app.use(expressValidator())
 
+app.use(session({ secret: process.env.SESSION_KEY, resave: false, saveUninitialized: true }))
+
 // Import and use multiple route js files and use them in the app.js
-const router = require('./routes/render-pages.js')
 const errorRoute = require('./routes/add-to-database.js')
-app.use(router)
+const register = require('./routes/register.js')
+const login = require('./routes/login.js')
+const logout = require('./routes/logout.js')
+const update = require('./routes/update.js')
+const deleteUser = require('./routes/delete.js')
+const router = require('./routes/render-pages.js')
 app.use(errorRoute)
+app.use(register.router)
+app.use(login)
+app.use(logout)
+app.use(update)
+app.use(deleteUser)
+app.use(router)

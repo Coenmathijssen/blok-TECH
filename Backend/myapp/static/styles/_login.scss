@@ -1,0 +1,51 @@
+@import 'colors';
+@import 'fonts';
+@import 'typography';
+@import 'base';
+@import 'reset';
+
+.login {
+  margin: auto 1em;
+  width: calc(100% - 2em);
+
+  .privacy {
+    padding: 10px 20px;
+    margin: 3vh 0;
+    background-color: $white;
+    border-radius: 16px;
+    box-shadow: 0px 2px 10px 1px rgba(0,0,0,0.5);
+
+    h2.title-l {
+      padding: 30px 0 0;
+      position: relative;
+      display: block;
+      text-align: center;
+
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-image: url(../images/icons/lock.svg);
+        background-size: 26px 22px;
+        background-repeat: no-repeat;
+        height: 22px;
+        width: 26px;
+      }
+    }
+
+    p.body-s {
+      text-align: center;
+    }
+  }
+
+  .container {
+    padding: 10px 20px;
+    margin: 3vh 0;
+    background-color: $white;
+    border-radius: 16px;
+    box-shadow: 0px 2px 10px 1px rgba(0,0,0,0.5);
+  }
+}
