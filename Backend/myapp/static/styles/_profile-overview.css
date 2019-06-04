@@ -870,4 +870,14 @@ footer .navigation {
       padding-top: 11px;
       background-color: #F6AB2A; }
 
+.succes {
+  display: block;
+  width: calc(100% -2em);
+  background-color: #01873a;
+  margin-top: 0; }
+  .succes p.body-m {
+    margin-top: 0;
+    text-align: center;
+    color: #FFFFFF; }
+
 /*# sourceMappingURL=_profile-overview.css.map */

@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const argon2 = require('argon2')
 const User = require('./user-schema')
 
 // register new user
@@ -9,9 +8,10 @@ router.post('/register', (req, res) => {
   newuser.firstName = req.body.firstName
   newuser.lastName = req.body.lastName
   newuser.email = req.body.email
-  newuser.password = await argon2.hash(req.body.password)
+  newuser.password = req.body.password
   newuser.disability = req.body.disability
   newuser.gender = req.body.tab
+  newuser.age = req.body.age
   newuser.address = req.body.address
   newuser.hobbies = req.body.hobbies
   newuser.about = req.body.about
@@ -19,15 +19,15 @@ router.post('/register', (req, res) => {
   newuser.save((err, savedUser) => {
     if (err) {
       console.log(err)
+      req.flash('failedRegister', `De verplichte invulvelden (*) zijn onjuist ingevuld of de email is al geregistreerd. Probeer opnieuw.`)
+      res.redirect('/create-account')
       return res.status(500).send
     } else {
+      req.flash('succesRegister', `User succesfully registered!`)
       res.redirect('/profile-overview')
       return res.status(200).send
     }
   })
 })
 
-module.exports = {
-  router: router,
-  email: emailRegister
-}
+module.exports = router

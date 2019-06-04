@@ -60,6 +60,12 @@ html {
 *::after {
   box-sizing: inherit; }
 
+.error {
+  display: block;
+  margin: 0 1em;
+  width: calc(100% -2em);
+  background-color: red; }
+
 body {
   background: #fff;
   color: #000;

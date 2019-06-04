@@ -11,20 +11,21 @@
         <img src="./images/logo-white.svg" alt="Logo I'm down.">
         <h1 class="title-xl">Fijn om een nieuw gezicht te zien.</h1>
         <p class="body-m">Registreer om toegang te krijgen tot alle functies.</p>
-        <a href="/login" class="body-m">Nog geen account? <span>Klik dan hier</span></a>
+        <a href="/login" class="body-m">Toch al een account? <span>Klik dan hier</span></a>
+        <div class="error"><p class="body-m white"><%=failedRegister%></p></div>
 
         <form method="POST" action="/register">
-            <label for="firstName">Voornaam</label>
-            <input id="firstName" type="text" name="firstName">
+            <label for="firstName">Voornaam*</label>
+            <input id="firstName" type="text" name="firstName" required>
 
-            <label for="lastName">Achternaam</label>
-            <input id="lastName" type="text" name="lastName">
+            <label for="lastName">Achternaam*</label>
+            <input id="lastName" type="text" name="lastName" required>
 
-            <label for="email">Email</label>
-            <input id="email" type="text" name="email">
+            <label for="email">Email*</label>
+            <input id="email" type="email" name="email" required>
 
-            <label for="password">Wachtwoord</label>
-            <input id="password" type="text" name="password">
+            <label for="password">Wachtwoord*</label>
+            <input id="password" type="password" name="password" required>
 
             <div class="toggle">
                 <label for="toggle">Ik ben een</label>
@@ -56,8 +57,15 @@
 
             <label for="about">Over mijzelf</label>
             <textarea id="about" name="about" rows="5"></textarea>
+
+            <!-- <label for="file">upload een profielfoto</label>
+            <input type="file" name="file" /> -->
+
             <input type="submit" value="Account Aanmaken">
+
         </form>
     </div>
+
+    <script src="../js/index.js"></script>
 </body>
 </html>

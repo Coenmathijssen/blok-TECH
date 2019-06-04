@@ -839,7 +839,7 @@ input[type="checkbox"] {
 input:focus,
 textarea:focus {
   box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.3);
-  border: solid 4px #5BB8B8; }
+  border: solid 2px #F39CA9; }
 
 label {
   display: block;
@@ -867,5 +867,12 @@ select {
   background: url(../images/icons/dropdown.svg) 96%/15% no-repeat;
   background-size: 27px 20px;
   background-color: #FFFFFF; }
+
+.error {
+  display: block;
+  background-color: #E50000;
+  margin-top: 0; }
+  .error p.body-m {
+    margin-top: 0; }
 
 /*# sourceMappingURL=_profile-detail.css.map */

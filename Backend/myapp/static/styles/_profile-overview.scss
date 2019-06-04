@@ -209,3 +209,15 @@
     }
   }
 }
+
+.succes {
+  display: block;
+  background-color: #01873a;
+  margin-top: 0;
+
+  p.body-m {
+    margin-top: 0;
+    text-align: center;
+    color: $white;
+  }
+}

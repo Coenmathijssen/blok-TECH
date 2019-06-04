@@ -13,17 +13,19 @@ router.post('/login', (req, res) => {
       }).then(() => {
         if (!User) {
           console.log('Failed to log in')
+          req.flash('failedLogin', 'Gebruikersnaam en/of wachtwoord is incorrect.')
+          res.redirect('/login')
           res.status(404).send()
         } else {
           console.log('Logged in!')
-          res.redirect('/dashboard')
-          res.status(200).send()
+          req.flash('succesLogin', 'Succesfully logged in!')
+          res.redirect('/profile-overview')
         }
         req.session.userData = User
         req.session.save(User => {
           // session saved
         })
-      })
+      }).catch(err => console.log(err))
   })
 })
 

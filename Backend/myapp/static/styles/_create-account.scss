@@ -190,8 +190,18 @@
       transition: all 0.2s ease;
       color: $white;
       appearance: none;
-      background: url(../images/icons/dropdown.svg) 96% / 15% no-repeat;
+      background: url(../images/icons/dropdown-white.svg) 96% / 15% no-repeat;
       background-size: 27px 20px;
     }
+  }
+}
+
+.error {
+  display: block;
+  background-color: #E50000;
+  margin-top: 0;
+
+  p.body-m {
+    margin-top: 0;
   }
 }

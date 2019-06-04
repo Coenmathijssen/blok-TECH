@@ -74,6 +74,8 @@ router.get('/profile-overview', (req, res) => {
     res.redirect('/login')
   } else {
     res.render('profile-overview', {
+      succesLogin: req.flash('succesLogin'),
+      succesUpdate: req.flash('succesUpdate'),
       title: 'Profile overview',
       firstLink: 'Ik ben', // Top nav menu item
       secondLink: 'Ik ben opzoek naar',
@@ -93,6 +95,7 @@ router.get('/profile-detail', (req, res) => {
   } else {
     User.find({}, (err, docs) => {
       res.render('profile-detail', {
+        failedDelete: req.flash('failedDelete'),
         title: 'Messages',
         firstLink: 'Alle matches', // Top nav menu item
         secondLink: 'Berichten',
@@ -107,6 +110,7 @@ router.get('/profile-detail', (req, res) => {
 // Rendering the create account screen
 router.get('/create-account', (req, res) => {
   res.render('create-account', {
+    failedRegister: req.flash('failedRegister'),
     title: 'Login page'
   })
 })
@@ -115,11 +119,13 @@ router.get('/create-account', (req, res) => {
 router.get('/login', (req, res) => {
   if (!req.session.userData) {
     res.render('login', {
+      succesRegister: req.flash('succesRegister'),
+      errorLogin: req.flash('failedLogin'),
       title: 'Login page',
       userData: req.session.userData
     })
   } else {
-    res.redirect('/user')
+    res.redirect('/login')
   }
 })
 

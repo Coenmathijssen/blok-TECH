@@ -192,3 +192,13 @@ select {
   background-size: 27px 20px;
   background-color: $white;
 }
+
+.error {
+  display: block;
+  background-color: #E50000;
+  margin-top: 0;
+
+  p.body-m {
+    margin-top: 0;
+  }
+}

@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const expressValidator = require('express-validator')
 const mongoose = require('mongoose')
 const session = require('express-session')
+const flash = require('connect-flash')
 mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.DATABASE_NAME, { useNewUrlParser: true })
 
 // Init Express
@@ -24,6 +25,9 @@ app.use(express.static(path.join(__dirname, 'static')))
 // Init bodyParser
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+
+// Init flash
+app.use(flash())
 
 // Global variables
 app.use((req, res, next) => {
@@ -53,7 +57,7 @@ const logout = require('./routes/logout.js')
 const update = require('./routes/update.js')
 const deleteUser = require('./routes/delete.js')
 const renderPages = require('./routes/render-pages.js')
-app.use(register.router)
+app.use(register)
 app.use(login)
 app.use(logout)
 app.use(update)

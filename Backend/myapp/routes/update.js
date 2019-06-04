@@ -28,8 +28,10 @@ router.post('/update', (req, res) => {
           foundObject.gender = req.body.tab
         } if (req.body.age) {
           foundObject.age = req.body.age
-        }if (req.body.address) {
+        } if (req.body.address) {
           foundObject.address = req.body.address
+        } if (req.body.disability) {
+          foundObject.disability = req.body.disability
         } if (req.body.hobbies) {
           foundObject.hobbies = req.body.hobbies
         } if (req.body.about) {
@@ -38,10 +40,14 @@ router.post('/update', (req, res) => {
 
         foundObject.save((err, updatedObject) => {
           if (err) {
+            req.flash('failedUpdate', 'Er is iets mis gegaan. Probeer het opnieuw.')
             console.log(err)
             res.status(500).send()
           } else {
+            req.flash('succesUpdate', 'Je gebruikersprofiel is geüpdatet')
             res.render('profile-overview', {
+              succesLogin: req.flash('succesLogin'),
+              succesUpdate: req.flash('succesUpdate'),
               title: 'Profile overview',
               firstLink: 'Ik ben', // Top nav menu item
               secondLink: 'Ik ben opzoek naar',

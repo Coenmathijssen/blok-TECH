@@ -6,6 +6,7 @@ router.get('/delete', (req, res) => {
   const id = req.session.userData._id
   User.findOneAndRemove({ _id: id }, (err) => {
     if (err) {
+      req.flash('failedDelete', 'Er is iets mis gegaan. Probeer het opnieuw.')
       console.log(err)
       res.status(500).send()
     } else {
