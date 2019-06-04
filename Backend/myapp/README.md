@@ -38,8 +38,8 @@ An example of a user in the current database:
 `node app.js` or `nodemon app.js` 
 in your terminal.
 6. Navigate to the you've chosen. If it is running locally, an example would be:
-`[localhost:8000](localhost:8000)`
-When you see the login screen, your all set:
+`localhost:8000`
+When you see the login screen, you're all set:
 
 
 ## Receiving updates on all files 
