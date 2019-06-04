@@ -38,6 +38,7 @@ SESSION_KEY = a random string (could be anything) for secure user sessions.
 This could be anything. However it must match the values in the .env file.
 4. Edit the user schema to fit the database suited for your project. This can be done inside the `routes/user-schema.js` file. Read up on the mongoDB docs on how to do that.
 An example of a user in the current database:
+<br>
 <img width="387" alt="Screenshot 2019-06-04 at 22 56 21" src="https://user-images.githubusercontent.com/43337909/58913925-967bae00-871d-11e9-9839-2c62e4b15c20.png">
 5. Move inside the cloned repository using `cd` in your terminal. Now run the command 
 `node app.js` or `nodemon app.js` 
@@ -45,6 +46,7 @@ in your terminal.
 6. Navigate to the you've chosen. If it is running locally, an example would be:
 `localhost:8000`
 When you see the login screen, you're all set:
+<br>
 <img width="350" alt="Screenshot 2019-06-04 at 22 56 21" src="https://user-images.githubusercontent.com/43337909/58914304-700a4280-871e-11e9-9250-4b7dc3a3077f.png">
 
 
