@@ -1,7 +1,7 @@
 # Project TECH webapp | I'm down
-<img width="387" alt="Screenshot 2019-06-04 at 22 56 21" src="https://user-images.githubusercontent.com/43337909/58914122-02f6ad00-871e-11e9-86cc-f8d42721c5b2.png">
-<img width="387" alt="Screenshot 2019-06-04 at 22 56 21" src="https://user-images.githubusercontent.com/43337909/58914123-038f4380-871e-11e9-93eb-1000986251f8.png">
-<img width="387" alt="Screenshot 2019-06-04 at 22 56 21" src="https://user-images.githubusercontent.com/43337909/58914124-038f4380-871e-11e9-97c8-75e10a1137e8.png">
+<img width="200" alt="Screenshot 2019-06-04 at 22 56 21" src="https://user-images.githubusercontent.com/43337909/58914122-02f6ad00-871e-11e9-86cc-f8d42721c5b2.png">
+<img width="200" alt="Screenshot 2019-06-04 at 22 56 21" src="https://user-images.githubusercontent.com/43337909/58914123-038f4380-871e-11e9-93eb-1000986251f8.png">
+<img width="200" alt="Screenshot 2019-06-04 at 22 56 21" src="https://user-images.githubusercontent.com/43337909/58914124-038f4380-871e-11e9-97c8-75e10a1137e8.png">
 
 
 I'm down is a datingapp created for people with a disability. With the app it's possible to find different kinds of relationship. It doesn't matter if you're looking for love, friendship or a community. The app matches your personality with a suitable match through a detailed questionnaire. The app will ask for character trades and preferences, which will be used to find someone suitable. It is also possible to chat on personal level, in groups, make videocalls, send video's and audio, and more. At last, a map functionality is included to find people nearby. Enjoy using this open source app!
