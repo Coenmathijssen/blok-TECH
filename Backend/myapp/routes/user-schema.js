@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+require('mongoose-type-email')
 
 /*  This is the user schema for mongoose/mongodb. With this schema, mongoose knows which data to expect and where it needs to be
 stored in the the database. This schema will be used with my database and will be put in the variable name 'User'. Which
@@ -8,7 +9,7 @@ is now available to write, delete and update data to. */
 const mySchema = mongoose.Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
-  email: { type: String, unique: true, required: true },
+  email: { type: mongoose.SchemaTypes.Email, required: true },
   password: { type: String, unique: true, required: true },
   gender: String,
   age: Number,
