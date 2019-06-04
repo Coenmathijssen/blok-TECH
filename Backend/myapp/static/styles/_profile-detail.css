@@ -773,7 +773,7 @@ textarea {
   display: block;
   padding: 0.5em;
   margin-bottom: 2vh;
-  border: solid 4px #147A9A;
+  border: solid 2px #147A9A;
   background: #FFFFFF;
   transition: all 0.2s ease;
   color: #0E1111; }
@@ -796,7 +796,7 @@ textarea {
       padding: .5em 1em;
       position: relative;
       background-color: #FFFFFF;
-      border: solid 4px #147A9A; }
+      border: solid 2px #147A9A; }
       .toggle input.tab + label.first {
         border-top-left-radius: 16px;
         border-bottom-left-radius: 16px; }
@@ -860,7 +860,7 @@ select {
   display: block;
   padding: 8px;
   margin-bottom: 3vh;
-  border: solid 4px #147A9A;
+  border: solid 2px #147A9A;
   transition: all 0.2s ease;
   color: #0E1111;
   appearance: none;

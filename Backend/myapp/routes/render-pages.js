@@ -1,9 +1,10 @@
-// All of the rendering of pages happen here.
-
 // Render the right pages and data per page
 const express = require('express')
 const router = express.Router()
-const User = require('./user-schema')
+
+/*  All the urls that will be hit will render the right pages in this file. All the functions will first check if a session exists.
+If not, the user will be redirected to the login page. If the session does exist, the page of the given url will be rendered.
+The content needed to be rendered will be passed along in the res.render functions. */
 
 // Rendering homescreen
 router.get('/', (req, res) => {
@@ -93,16 +94,14 @@ router.get('/profile-detail', (req, res) => {
     res.status(401).send()
     res.redirect('/login')
   } else {
-    User.find({}, (err, docs) => {
-      res.render('profile-detail', {
-        failedDelete: req.flash('failedDelete'),
-        title: 'Messages',
-        firstLink: 'Alle matches', // Top nav menu item
-        secondLink: 'Berichten',
-        firstAnchor: '../matches', // Top nav menu anchor links
-        secondAnchor: '../messages',
-        userData: req.session.userData
-      })
+    res.render('profile-detail', {
+      failedDelete: req.flash('failedDelete'),
+      title: 'Messages',
+      firstLink: 'Alle matches', // Top nav menu item
+      secondLink: 'Berichten',
+      firstAnchor: '../matches', // Top nav menu anchor links
+      secondAnchor: '../messages',
+      userData: req.session.userData
     })
   }
 })
@@ -142,27 +141,6 @@ router.get('/dashboard', (req, res) => {
   }
 })
 
-// Rendering the account screen with the user data
-router.get('/user', (req, res) => {
-  if (!req.session.userData) {
-    console.log(`You're not logged in. Please login first.`)
-    res.status(401).send()
-    res.redirect('/login')
-  } else {
-    User.find({}, (err, docs) => {
-      res.render('user', {
-        users: docs,
-        userData: req.session.userData,
-        title: 'Messages',
-        firstLink: 'Alle matches', // Top nav menu item
-        secondLink: 'Berichten',
-        firstAnchor: '../matches', // Top nav menu anchor links
-        secondAnchor: '../messages'
-      })
-    })
-  }
-})
-
 // Rendering the profile page, but editable
 router.get('/update', (req, res) => {
   if (!req.session.userData) {
@@ -180,13 +158,5 @@ router.get('/update', (req, res) => {
 router.get('*', function (req, res) {
   res.status(404).send('<h1>I`m sorry, the page you were looking for is not here <br> 404</h1>')
 })
-
-// router.use(session({
-//   resave: false,
-//   saveUninitialized: true,
-//   secret: 'xxxx',
-//   port: 3000,
-//   secure: false
-// }))
 
 module.exports = router

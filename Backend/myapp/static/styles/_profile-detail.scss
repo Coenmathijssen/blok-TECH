@@ -69,7 +69,7 @@ textarea {
   display: block;
   padding: 0.5em;
   margin-bottom: 2vh;
-  border: solid 4px $blue;
+  border: solid 2px $blue;
   background: $white;
   transition: all 0.2s ease;
   color: $black;
@@ -96,7 +96,7 @@ textarea {
       padding: .5em 1em;
       position: relative;
       background-color: $white;
-      border: solid 4px $blue;
+      border: solid 2px $blue;
 
       &.first {
         border-top-left-radius: 16px;
@@ -184,7 +184,7 @@ select {
   display: block;
   padding: 8px;
   margin-bottom: 3vh;
-  border: solid 4px $blue;
+  border: solid 2px $blue;
   transition: all 0.2s ease;
   color: $black;
   appearance: none;

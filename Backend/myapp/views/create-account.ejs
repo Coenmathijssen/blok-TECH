@@ -14,7 +14,7 @@
         <a href="/login" class="body-m">Toch al een account? <span>Klik dan hier</span></a>
         <div class="error"><p class="body-m white"><%=failedRegister%></p></div>
 
-        <form method="POST" action="/register">
+        <form method="POST" action="/register" enctype="multipart/form-data">
             <label for="firstName">Voornaam*</label>
             <input id="firstName" type="text" name="firstName" required>
 
@@ -40,8 +40,8 @@
             <label for="age">Ik ben ... jaar</label>
             <input id="age" type="text" name="age">
 
-            <label for="adress">Ik woon in</label>
-            <input id="adress" type="text" name="adress">
+            <label for="address">Ik woon in</label>
+            <input id="adress" type="text" name="address">
 
             <label for="select">Ik heb de volgende beperking</label>
             <select id="select" name="disability">
@@ -58,8 +58,8 @@
             <label for="about">Over mijzelf</label>
             <textarea id="about" name="about" rows="5"></textarea>
 
-            <!-- <label for="file">upload een profielfoto</label>
-            <input type="file" name="file" /> -->
+            <label for="file">upload een profielfoto</label>
+            <input type="file" name="profilePic" />
 
             <input type="submit" value="Account Aanmaken">
 

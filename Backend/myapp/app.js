@@ -22,22 +22,15 @@ app.set('views', path.join(__dirname, 'views'))
 //  Serve html, css and js files in the static directory
 app.use(express.static(path.join(__dirname, 'static')))
 
+// Access the images uploaded by the user without removing the static/ in the url
+app.use('/static', express.static('static'))
+
 // Init bodyParser
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // Init flash
 app.use(flash())
-
-// Global variables
-app.use((req, res, next) => {
-  res.locals.errors = null
-  res.locals.userid = null
-  next()
-})
-
-//  Express validator middleware
-app.use(expressValidator())
 
 // Session init
 app.use(session({ secret: process.env.SESSION_KEY, resave: false, saveUninitialized: true }))
@@ -46,11 +39,12 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   secret: process.env.SESSION_KEY,
-  port: 3000,
+  port: process.env.PORT,
   secure: false
 }))
 
-// Import and use multiple route js files and use them in the app.js
+/*  Import and use all my different routes and render them in this file (app.js). With this method, everything is neatly seperated.
+Which will make it cleaner, more understandable and better scalable.  */
 const register = require('./routes/register.js')
 const login = require('./routes/login.js')
 const logout = require('./routes/logout.js')

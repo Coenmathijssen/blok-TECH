@@ -2,11 +2,16 @@ const express = require('express')
 const router = express.Router()
 const User = require('./user-schema')
 
+/*  When the url /update is hit, the function bellow will get the user id through the input field. Then it will check if the id matches
+an object (user) in the databse. If it does, it will take that object and replace all properties with the matching input fields. But only
+if they are filled in. Then it will save this new object which will override the existing one. At last, the profile-overview
+page will be rendered again with the freshly updated data.  */
+
 router.post('/update', (req, res) => {
   console.log('running')
   const id = req.body.id
   console.log(id)
-  User.findOne({ _id : id }, (err, foundObject) => {
+  User.findOne({ _id: id }, (err, foundObject) => {
     if (err) {
       console.log(err)
       res.status(500).send()
