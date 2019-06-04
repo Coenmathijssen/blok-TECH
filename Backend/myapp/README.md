@@ -1,9 +1,8 @@
 # Project TECH webapp | I'm down
-<img width="387" alt="Screenshot 2019-06-04 at 22 56 21" src="https://user-images.githubusercontent.com/43337909/58913925-967bae00-871d-11e9-9839-2c62e4b15c20.png">
-![Screenshot 2019-06-04 at 23 02 01](https://user-images.githubusercontent.com/43337909/58913926-967bae00-871d-11e9-9daa-6f05550d1edb.png)
-![Screenshot 2019-06-04 at 23 03 03](https://user-images.githubusercontent.com/43337909/58913928-967bae00-871d-11e9-83ac-87ebf2b8ea07.png)
-![Screenshot 2019-06-04 at 23 06 58](https://user-images.githubusercontent.com/43337909/58913929-967bae00-871d-11e9-8d6c-a02522c2a858.png)
-![Screenshot 2019-06-04 at 23 07 39](https://user-images.githubusercontent.com/43337909/58913930-97144480-871d-11e9-95d0-c43e6e721370.png)
+<img width="387" alt="Screenshot 2019-06-04 at 22 56 21" src="https://user-images.githubusercontent.com/43337909/58914122-02f6ad00-871e-11e9-86cc-f8d42721c5b2.png">
+<img width="387" alt="Screenshot 2019-06-04 at 22 56 21" src="https://user-images.githubusercontent.com/43337909/58914123-038f4380-871e-11e9-93eb-1000986251f8.png">
+<img width="387" alt="Screenshot 2019-06-04 at 22 56 21" src="https://user-images.githubusercontent.com/43337909/58914124-038f4380-871e-11e9-97c8-75e10a1137e8.png">
+
 
 I'm down is a datingapp created for people with a disability. With the app it's possible to find different kinds of relationship. It doesn't matter if you're looking for love, friendship or a community. The app matches your personality with a suitable match through a detailed questionnaire. The app will ask for character trades and preferences, which will be used to find someone suitable. It is also possible to chat on personal level, in groups, make videocalls, send video's and audio, and more. At last, a map functionality is included to find people nearby. Enjoy using this open source app!
 
@@ -39,7 +38,7 @@ SESSION_KEY = a random string (could be anything) for secure user sessions.
 This could be anything. However it must match the values in the .env file.
 4. Edit the user schema to fit the database suited for your project. This can be done inside the `routes/user-schema.js` file. Read up on the mongoDB docs on how to do that.
 An example of a user in the current database:
-
+<img width="387" alt="Screenshot 2019-06-04 at 22 56 21" src="https://user-images.githubusercontent.com/43337909/58913925-967bae00-871d-11e9-9839-2c62e4b15c20.png">
 5. Move inside the cloned repository using `cd` in your terminal. Now run the command 
 `node app.js` or `nodemon app.js` 
 in your terminal.
