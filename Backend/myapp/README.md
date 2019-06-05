@@ -70,6 +70,18 @@ Run the following command in your repository once in a while
 command on your mac.
 5. Make sure to include the newly compiled CSS file into your corresponding EJS file. Not the SCSS file, this won't work.
 
+## Editing / creating new functions
+1. All the different functionalities are defined in routes/. Here you can add a new file `yourfunction.js` file or edit an existing one.
+2. Make sure to write all 
+`app.get/post/delete/etc -> router.get/post/delete/etc`
+3. In the bottom of the file, write `module.exports = router` to export the function.
+4. Import the function at the bottom of the app.js file with the following code:
+```
+const customName = require('./routes/nameOfYourFunctionFile.js')
+app.use(customName)
+```
+5. Now your function will be imported in the app.js file
+
 ## License
 This package is licensed under the [MIT license](https://github.com/Coenmathijssen/NPM-boilerplate/blob/master/LICENSE) © [Coen Mathijssen](https://www.coenmathijssen.nl/)
 
