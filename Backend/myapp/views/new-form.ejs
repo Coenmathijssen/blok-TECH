@@ -1,49 +1,45 @@
 <% include partials/header %>
-    <link rel="stylesheet" href="styles/_create-account.css">
+    <link rel="stylesheet" href="styles/_new-form.css">
 </head>
-// TESTING NEW FORM
-        <div class="form_wrapper">
-            <fieldset class="msf_hide">
-                <h2>The first form</h2>
-                <div>
-                    <input type="text" name="firstname" placeholder="First Name">
-                    <input type="text" name="lastname" placeholder="Last Name">
-                </div>
-                <div>
-                    <input type="email" name="email" placeholder=" Your Email">
-                </div>
-                    <input type="button" name="back" value="Back"  onclick="msf_btn_back()">
-                    <input type="button" name="next" value="Next"  onclick="msf_btn_next()">
-                <div class="msf_bullet_o"></div>
-                <div class="msf_line"></div>
-            </fieldset>
+    <div class="form_wrapper">
+        <fieldset>
+            <h2>The first form</h2>
+            <div>
+                <input type="text" name="firstname" placeholder="First Name">
+                <input type="text" name="lastname" placeholder="Last Name">
+            </div>
+            <div>
+                <input type="email" name="email" placeholder=" Your Email">
+            </div>
+                <button class="hide" name="back" onclick="previousStep()">Back</button>
+                <button class="hide" name="next" onclick="nextStep()">Next</button>
+            <div class="bullet-container"></div>
+        </fieldset>
 
-            <fieldset class="msf_hide">
-                <h2>This is form 2</h2>
-                <input type="text" name="school" placeholder="School">
-                <input type="date" name="date" placeholder="Birthdate">
-                <div>
-                    <input type="radio" name="gender" value="male" checked> Male<br>
-                    <input type="radio" name="gender" value="female"> Female<br>
-                    <input type="radio" name="gender" value="other"> Other
-                </div>
-                <input type="button" name="back" value="Back"  onclick="msf_btn_back()">
-                <input type="button" name="next" value="Next"  onclick="msf_btn_next()">
-                <div class="msf_bullet_o"></div>
-                <div class="msf_line"></div>
-            </fieldset>
+        <fieldset>
+            <h2>This is form 2</h2>
+            <input type="text" name="school" placeholder="School">
+            <input type="date" name="date" placeholder="Birthdate">
+            <div>
+                <input type="radio" name="gender" value="male" checked> Male<br>
+                <input type="radio" name="gender" value="female"> Female<br>
+                <input type="radio" name="gender" value="other"> Other
+            </div>
+            <button class="hide" name="back" onclick="previousStep()">Back</button>
+            <button class="hide" name="next" onclick="nextStep()">Next</button>
+            <div class="bullet-container"></div>
+        </fieldset>
 
-            <fieldset class="msf_hide">
-                <h2>The last form</h2>
-                <input type="text" name="name" placeholder="Name">
-                <input type="email" name="email" placeholder="Email">
-                <input type="button" name="back" value="Back"  onclick="msf_btn_back()">
-                <input type="button" name="next" value="Next"  onclick="msf_btn_next()">
-                <input type="submit" name="submit" value="Submit Now!" onclick="">
-                <div class="msf_bullet_o"></div>
-                    <div class="msf_line"></div>
-            </fieldset>
-        </div>
-    <script src="../js/index.js"></script>
+        <fieldset>
+            <h2>The last form</h2>
+            <input type="text" name="name" placeholder="Name">
+            <input type="email" name="email" placeholder="Email">
+            <button class="hide" name="back" onclick="previousStep()">Back</button>
+            <button class="hide" name="next" onclick="nextStep()">Next</button>
+            <input type="submit" name="submit" value="Submit Now!" onclick="">
+            <div class="bullet-container"></div>
+        </fieldset>
+    </div>
+    <!-- <script src="../js/index.js"></script> -->
 </body>
 </html>

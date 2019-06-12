@@ -525,10 +525,10 @@ table {
     margin-top: 0; }
 
 /* For the function */
-.msf_hide {
+.hide {
   display: none; }
 
-.msf_show {
+.show {
   display: block; }
 
 .msf_bullet_o {

@@ -1,75 +1,62 @@
-console.log("Reloaded")
+// Selecting every fieldset available
+const formPart = document.getElementsByTagName('fieldset')
 
-// dom variables
-var msf_getFsTag = document.getElementsByTagName("fieldset")
+// Selecting every button available
+const buttons = document.getElementsByTagName('button')
 
-// declaring the active fieldset & the total fieldset count
-var msf_form_nr = 0
-var fieldset = msf_getFsTag[msf_form_nr]
-fieldset.className = "msf_show"
+// Checking the active fieldset with formNumber
+let formNumber = 0
+let fieldset = formPart[formNumber]
+fieldset.className = 'show'
 
-// creates and stores a number of bullets
-var msf_bullet_nr = "<div class='msf_bullet'></div>"
-var msf_length = msf_getFsTag.length
-for (var i = 1; i < msf_length; ++i) {
-  msf_bullet_nr += "<div class='msf_bullet'></div>"
+// Checks the amount of fieldsets and duplicates the HTML string for the bullet as many times  as there are fieldsets
+let bulletNumber = "<div class='bullet'></div>"
+const formLength = formPart.length
+for (let i = 1; i < formLength; ++i) {
+  bulletNumber += "<div class='bullet'></div>"
+
+  // Hide the fieldsets (formParts) if the Javascript is running
+  formPart[i].className = 'hide'
+
+  // Changes the hide class for show to display the buttons if the Javascript is running
+  for (let x = 0; x < buttons.length; x++) {
+    buttons[x].className = 'show'
+  }
 }
-// injects bullets
-var msf_bullet_o = document.getElementsByClassName("msf_bullet_o")
-for (var i = 0; i < msf_bullet_o.length; ++i) {
-  var msf_b_item = msf_bullet_o[i]
-  msf_b_item.innerHTML = msf_bullet_nr
+
+// Checks the amount of bulletContainers and injects the bullets necessery (see the loop above) into each one
+const bulletContainer = document.getElementsByClassName('bullet-container')
+for (let i = 0; i < bulletContainer.length; ++i) {
+  const bulletContainerCount = bulletContainer[i]
+  bulletContainerCount.innerHTML = bulletNumber
 }
 
-// removes the first back button & the last next button
-document.getElementsByName("back")[0].className = "msf_hide"
-document.getElementsByName("next")[msf_bullet_o.length - 1].className = "msf_hide"
+// Removes the previous button on first fieldset and removes the next buton on the last fieldset
+document.getElementsByName('back')[0].className = 'hide'
+document.getElementsByName('next')[bulletContainer.length - 1].className = 'hide'
 
 // Makes the first dot active
-var msf_bullets = document.getElementsByClassName("msf_bullet")
-msf_bullets[msf_form_nr].className += " msf_bullet_active"
+const bullet = document.getElementsByClassName('bullet')
+bullet[formNumber].className += ' bullet-active'
 
-// Validation loop & goes to the next step
-function msf_btn_next() {
-    var msf_val = true
+// Function to go to the next fieldset (formPart) and change the bullet active to the next one
+function nextStep () {
+  fieldset = document.querySelectorAll('fieldset')[formNumber]
 
-    var msf_fs = document.querySelectorAll("fieldset")[msf_form_nr]
-    var msf_fs_i_count = msf_fs.querySelectorAll("input").length
+  // Hides the current fieldset and reveales the next one with the class show
+  fieldset.className = 'hide'
+  formNumber = formNumber + 1
+  fieldset = formPart[formNumber]
+  fieldset.className = 'show'
 
-  for (i = 0; i < msf_fs_i_count; ++i) {
-    var msf_input_s = msf_fs.querySelectorAll("input")[i]
-    if (msf_input_s.getAttribute("type") === "button") {
-      // nothing happens
-    } else {
-      if (msf_input_s.value === "") {
-        msf_input_s.style.backgroundColor = "pink"
-        msf_val = false
-      } else {
-        if (msf_val === false) {} else {
-          msf_val = true
-          msf_input_s.style.backgroundColor = "lime"
-        }
-      }
-    }
-  }
-  if (msf_val === true) {
-    // goes to the next step
-    var selection = msf_getFsTag[msf_form_nr]
-    selection.className = "msf_hide"
-    msf_form_nr = msf_form_nr + 1
-    var selection = msf_getFsTag[msf_form_nr]
-    selection.className = "msf_show"
-    // refreshes the bullet
-    var msf_bullets_a = msf_form_nr * msf_length + msf_form_nr
-    msf_bullets[msf_bullets_a].className += " msf_bullet_active"
-  }
+  // Makes the next bullet active
+  var bulletRefresh = formNumber * formLength + formNumber
+  bullet[bulletRefresh].className += ' bullet-active'
 }
 
-// goes one step back
-function msf_btn_back() {
-  msf_getFsTag[msf_form_nr].className = "msf_hide"
-  msf_form_nr = msf_form_nr - 1
-  msf_getFsTag[msf_form_nr].className = "msf_showhide"
+// Hides the current fieldset and reveales the previous one with the class show
+function previousStep () {
+  formPart[formNumber].className = 'hide'
+  formNumber = formNumber - 1
+  formPart[formNumber].className = 'show'
 };
-
-console.log("loaded")
