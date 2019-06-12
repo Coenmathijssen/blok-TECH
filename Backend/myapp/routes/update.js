@@ -8,7 +8,6 @@ if they are filled in. Then it will save this new object which will override the
 page will be rendered again with the freshly updated data.  */
 
 router.post('/update', (req, res) => {
-  console.log('running')
   const id = req.body.id
   console.log(id)
   User.findOne({ _id: id }, (err, foundObject) => {

@@ -114,6 +114,13 @@ router.get('/create-account', (req, res) => {
   })
 })
 
+// Rendering the new form screen
+router.get('/new-form', (req, res) => {
+  res.render('new-form', {
+    title: 'New form'
+  })
+})
+
 // Rendering the login screen
 router.get('/login', (req, res) => {
   if (!req.session.userData) {
