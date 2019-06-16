@@ -97,8 +97,8 @@ router.get('/profile-detail', (req, res) => {
     res.render('profile-detail', {
       failedDelete: req.flash('failedDelete'),
       title: 'Messages',
-      firstLink: 'Alle matches', // Top nav menu item
-      secondLink: 'Berichten',
+      firstLink: 'Ik ben', // Top nav menu item
+      secondLink: 'Ik ben opzoek naar',
       firstAnchor: '../matches', // Top nav menu anchor links
       secondAnchor: '../messages',
       userData: req.session.userData
@@ -115,9 +115,13 @@ router.get('/create-account', (req, res) => {
 })
 
 // Rendering the new form screen
-router.get('/new-form', (req, res) => {
-  res.render('new-form', {
-    title: 'New form'
+router.get('/character-match', (req, res) => {
+  res.render('character-match', {
+    title: 'Character match',
+    firstLink: 'Ik ben', // Top nav menu item
+    secondLink: 'Ik ben opzoek naar',
+    firstAnchor: '../matches', // Top nav menu anchor links
+    secondAnchor: '../messages'
   })
 })
 

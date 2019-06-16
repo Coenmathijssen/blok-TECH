@@ -12,7 +12,7 @@ fieldset.className = 'show'
 // Checks the amount of fieldsets and duplicates the HTML string for the bullet as many times  as there are fieldsets
 let bulletNumber = "<div class='bullet'></div>"
 const formLength = formPart.length
-for (let i = 1; i < formLength; ++i) {
+for (let i = 1; i < formLength; i++) {
   bulletNumber += "<div class='bullet'></div>"
 
   // Hide the fieldsets (formParts) if the Javascript is running
@@ -26,7 +26,7 @@ for (let i = 1; i < formLength; ++i) {
 
 // Checks the amount of bulletContainers and injects the bullets necessery (see the loop above) into each one
 const bulletContainer = document.getElementsByClassName('bullet-container')
-for (let i = 0; i < bulletContainer.length; ++i) {
+for (let i = 0; i < bulletContainer.length; i++) {
   const bulletContainerCount = bulletContainer[i]
   bulletContainerCount.innerHTML = bulletNumber
 }
