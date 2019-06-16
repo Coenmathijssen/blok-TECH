@@ -116,13 +116,19 @@ router.get('/create-account', (req, res) => {
 
 // Rendering the new form screen
 router.get('/character-match', (req, res) => {
-  res.render('character-match', {
-    title: 'Character match',
-    firstLink: 'Ik ben', // Top nav menu item
-    secondLink: 'Ik ben opzoek naar',
-    firstAnchor: '../matches', // Top nav menu anchor links
-    secondAnchor: '../messages'
-  })
+  if (!req.session.userData) {
+    console.log(`You're not logged in. Please login first.`)
+    res.status(401).send()
+    res.redirect('/login')
+  } else {
+    res.render('character-match', {
+      title: 'Character match',
+      firstLink: 'Ik ben', // Top nav menu item
+      secondLink: 'Ik ben opzoek naar',
+      firstAnchor: '../matches', // Top nav menu anchor links
+      secondAnchor: '../messages'
+    })
+  }
 })
 
 // Rendering the login screen

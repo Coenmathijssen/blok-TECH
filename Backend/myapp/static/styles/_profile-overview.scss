@@ -12,7 +12,7 @@
   }
 
   .container {
-    margin: 0 1em;
+    margin: 0 1em 8em;
     width: calc(100% - 2em);
   }
 
@@ -205,6 +205,21 @@
       span {
         padding-top: 11px;
         background-color: $orange;
+      }
+    }
+
+    &.fourth {
+      border: solid 4px $pink;
+      color: $pink;
+
+      &:hover {
+        background-color: $pink;
+        color: $white;
+      }
+
+      span {
+        padding-top: 9px;
+        background-color: $pink;
       }
     }
   }

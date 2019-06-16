@@ -2,7 +2,7 @@
 const formPart = document.getElementsByTagName('fieldset')
 
 // Selecting every button available
-const buttons = document.getElementsByTagName('button')
+const buttons = document.getElementsByTagName('a')
 
 // Checking the active fieldset with formNumber
 let formNumber = 0

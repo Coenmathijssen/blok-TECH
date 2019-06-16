@@ -732,7 +732,7 @@ footer .navigation {
 .profile-overview .header-nav {
   background-color: #F6AB2A; }
 .profile-overview .container {
-  margin: 0 1em;
+  margin: 0 1em 8em;
   width: calc(100% - 2em); }
 .profile-overview section:first-of-type {
   display: flex;
@@ -869,10 +869,18 @@ footer .navigation {
     .profile-overview .button.third span {
       padding-top: 11px;
       background-color: #F6AB2A; }
+  .profile-overview .button.fourth {
+    border: solid 4px #F39CA9;
+    color: #F39CA9; }
+    .profile-overview .button.fourth:hover {
+      background-color: #F39CA9;
+      color: #FFFFFF; }
+    .profile-overview .button.fourth span {
+      padding-top: 9px;
+      background-color: #F39CA9; }
 
 .succes {
   display: block;
-  width: calc(100% -2em);
   background-color: #01873a;
   margin-top: 0; }
   .succes p.body-m {

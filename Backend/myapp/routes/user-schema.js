@@ -17,7 +17,17 @@ const mySchema = mongoose.Schema({
   disability: String,
   hobbies: String,
   about: String,
-  profilePic: String
+  profilePic: String,
+  // From character match:
+  sameDisability: String,
+  lookingFor: String,
+  sameCity: String,
+  characterFirst: String,
+  characterSecond: String,
+  characterThird: String,
+  characterFourth: String,
+  characterFifth: String,
+  characterSixth: String
 })
 
 const User = mongoose.model('users', mySchema)

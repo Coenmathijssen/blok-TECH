@@ -3,107 +3,112 @@
 </head>
 <body class="personality">
     <% include partials/top-navbar %>
+    <nav class="navigation">
+        <a href="/profile-overview" class="title-m"><span><img src="../images/icons/back.svg" alt="A back button for returning to the previous page"></span>Vorige <br> pagina</a>
+    </nav>
     <h1 class="title-xl">Karaktermatch</h1>
     <p class="body-m">Doe de karaktermatch door deze vragen te beantwoorden, zodat wij iemand kunnen vinden die écht bij jou past.</p>
     <div class="form-wrapper">
-        <fieldset>
-            <h2 class="title-xl">Jouw voorkeur</h2>
-            <div class="toggle">
-               <label for="toggle" class="label title-m">Mijn match moet dezelfde aandoening hebben</label>
-               <input id="yes" type="radio" class="tab" name="a" value="yes">
-               <label class="label first" for="yes" class="radio-inline">Absoluut</label>
-               <input id="maybe" type="radio" class="tab" name="a" value="maybe">
-               <label class="label" for="maybe" class="radio-inline">Zou fijn zijn</label>
-               <input id="no" type="radio" class="tab" name="a" value="no">
-               <label class="label last" for="no" class="radio-inline">Nee</label>
-            </div>
+        <form method="POST" action="/character-match">
+            <fieldset>
+                <h2 class="title-xl">Jouw voorkeur</h2>
+                <div class="toggle">
+                   <label for="toggle" class="label title-m">Mijn match moet dezelfde aandoening hebben</label>
+                   <input id="yes" type="radio" class="tab" name="a" value="yes">
+                   <label class="label first" for="yes" class="radio-inline">Absoluut</label>
+                   <input id="maybe" type="radio" class="tab" name="a" value="maybe">
+                   <label class="label" for="maybe" class="radio-inline">Zou fijn zijn</label>
+                   <input id="no" type="radio" class="tab" name="a" value="no">
+                   <label class="label last" for="no" class="radio-inline">Nee</label>
+                </div>
 
-            <div class="toggle">
-               <label for="toggle" class="label title-m">Ik ben opzoek naar</label>
-               <input id="friendship" type="radio" class="tab" name="b" value="friendship">
-               <label class="label first" for="friendship" class="radio-inline">Vriendschap</label>
-               <input id="love" type="radio" class="tab" name="b" value="love">
-               <label class="label" for="love" class="radio-inline">Liefde</label>
-               <input id="both" type="radio" class="tab" name="b" value="both">
-               <label class="label last" for="both" class="radio-inline">Beide</label>
-            </div>
+                <div class="toggle">
+                   <label for="toggle" class="label title-m">Ik ben opzoek naar</label>
+                   <input id="friendship" type="radio" class="tab" name="b" value="friendship">
+                   <label class="label first" for="friendship" class="radio-inline">Vriendschap</label>
+                   <input id="love" type="radio" class="tab" name="b" value="love">
+                   <label class="label" for="love" class="radio-inline">Liefde</label>
+                   <input id="both" type="radio" class="tab" name="b" value="both">
+                   <label class="label last" for="both" class="radio-inline">Beide</label>
+                </div>
 
-            <div class="toggle">
-               <label for="toggle" class="label title-m">Mijn match moet in dezelfde stad wonen</label>
-               <input id="yes2" type="radio" class="tab" name="c" value="yes">
-               <label class="label first" for="yes2" class="radio-inline">Ja</label>
-               <input id="no2" type="radio" class="tab" name="c" value="no">
-               <label class="label last" for="no2" class="radio-inline">Nee</label>
-            </div>
+                <div class="toggle">
+                   <label for="toggle" class="label title-m">Mijn match moet in dezelfde stad wonen</label>
+                   <input id="yes2" type="radio" class="tab" name="c" value="yes">
+                   <label class="label first" for="yes2" class="radio-inline">Ja</label>
+                   <input id="no2" type="radio" class="tab" name="c" value="no">
+                   <label class="label last" for="no2" class="radio-inline">Nee</label>
+                </div>
 
-            <button class="hide" name="back" onclick="previousStep()">Terug</button>
-            <button class="hide" name="next" onclick="nextStep()">Verder</button>
-            <div class="bullet-container"></div>
-        </fieldset>
+                <a href="#" class="hide" name="back" onclick="previousStep()">Terug</a href="#">
+                <a href="#" class="hide" name="next" onclick="nextStep()">Verder</a href="#">
+                <div class="bullet-container"></div>
+            </fieldset>
 
-        <fieldset>
-            <h2 class="title-xl">Jouw karakter 1/2</h2>
-            <div class="toggle">
-               <label for="toggle" class="label title-m">Ik ben</label>
-               <input id="introvert" type="radio" class="tab" name="d" value="introvert">
-               <label class="label first" for="introvert" class="radio-inline">Introvert</label>
-               <input id="inbetween" type="radio" class="tab" name="d" value="inbetween">
-               <label class="label" for="inbetween" class="radio-inline">Ertussen</label>
-               <input id="extrovert" type="radio" class="tab" name="d" value="extrovert">
-               <label class="label last" for="extrovert" class="radio-inline">Extrovert</label>
-            </div>
+            <fieldset>
+                <h2 class="title-xl">Jouw karakter 1/2</h2>
+                <div class="toggle">
+                   <label for="toggle" class="label title-m">Ik ben</label>
+                   <input id="introvert" type="radio" class="tab" name="d" value="introvert">
+                   <label class="label first" for="introvert" class="radio-inline">Introvert</label>
+                   <input id="inbetween" type="radio" class="tab" name="d" value="inbetween">
+                   <label class="label" for="inbetween" class="radio-inline">Ertussen</label>
+                   <input id="extrovert" type="radio" class="tab" name="d" value="extrovert">
+                   <label class="label last" for="extrovert" class="radio-inline">Extrovert</label>
+                </div>
 
-            <div class="toggle">
-               <label for="toggle" class="label title-m">Ik ben</label>
-               <input id="shy" type="radio" class="tab" name="f" value="shy">
-               <label class="label first" for="shy" class="radio-inline">Verlegen</label>
-               <input id="not-shy" type="radio" class="tab" name="f" value="not-shy">
-               <label class="label last" for="not-shy" class="radio-inline">Niet verlegen</label>
-            </div>
+                <div class="toggle">
+                   <label for="toggle" class="label title-m">Ik ben</label>
+                   <input id="shy" type="radio" class="tab" name="f" value="shy">
+                   <label class="label first" for="shy" class="radio-inline">Verlegen</label>
+                   <input id="not-shy" type="radio" class="tab" name="f" value="not-shy">
+                   <label class="label last" for="not-shy" class="radio-inline">Niet verlegen</label>
+                </div>
 
-            <div class="toggle">
-               <label for="toggle" class="label title-m">Ik ben</label>
-               <input id="organised" type="radio" class="tab" name="g" value="organised">
-               <label class="label first" for="organised" class="radio-inline">Georganiseerd</label>
-               <input id="free" type="radio" class="tab" name="g" value="free">
-               <label class="label last" for="free" class="radio-inline">Vrij</label>
-            </div>
+                <div class="toggle">
+                   <label for="toggle" class="label title-m">Ik ben</label>
+                   <input id="organised" type="radio" class="tab" name="g" value="organised">
+                   <label class="label first" for="organised" class="radio-inline">Georganiseerd</label>
+                   <input id="free" type="radio" class="tab" name="g" value="free">
+                   <label class="label last" for="free" class="radio-inline">Vrij</label>
+                </div>
 
-            <button class="hide" name="back" onclick="previousStep()">Terug</button>
-            <button class="hide" name="next" onclick="nextStep()">Verder</button>
-            <div class="bullet-container"></div>
-        </fieldset>
+                <a href="#" class="hide" name="back" onclick="previousStep()">Terug</a href="#">
+                <a href="#" class="hide" name="next" onclick="nextStep()">Verder</a href="#">
+                <div class="bullet-container"></div>
+            </fieldset>
 
-        <fieldset>
-            <h2 class="title-xl">Jouw karakter 2/2</h2>
-            <div class="toggle">
-               <label for="toggle" class="label title-m">Ik heb</label>
-               <input id="impatient" type="radio" class="tab" name="h" value="impatient">
-               <label class="label first" for="impatient" class="radio-inline">Veel geduld</label>
-               <input id="patient" type="radio" class="tab" name="h" value="patient">
-               <label class="label last" for="patient" class="radio-inline">Een kort lontje</label>
-            </div>
+            <fieldset>
+                <h2 class="title-xl">Jouw karakter 2/2</h2>
+                <div class="toggle">
+                   <label for="toggle" class="label title-m">Ik heb</label>
+                   <input id="impatient" type="radio" class="tab" name="h" value="impatient">
+                   <label class="label first" for="impatient" class="radio-inline">Veel geduld</label>
+                   <input id="patient" type="radio" class="tab" name="h" value="patient">
+                   <label class="label last" for="patient" class="radio-inline">Een kort lontje</label>
+                </div>
 
-            <div class="toggle">
-               <label for="toggle" class="label title-m">Ik ben</label>
-               <input id="clean" type="radio" class="tab" name="i" value="clean">
-               <label class="label first" for="clean" class="radio-inline">Opgeruimd</label>
-               <input id="dirty" type="radio" class="tab" name="i" value="dirty">
-               <label class="label last" for="dirty" class="radio-inline">Onopgeruimd</label>
-            </div>
+                <div class="toggle">
+                   <label for="toggle" class="label title-m">Ik ben</label>
+                   <input id="clean" type="radio" class="tab" name="i" value="clean">
+                   <label class="label first" for="clean" class="radio-inline">Opgeruimd</label>
+                   <input id="dirty" type="radio" class="tab" name="i" value="dirty">
+                   <label class="label last" for="dirty" class="radio-inline">Onopgeruimd</label>
+                </div>
 
-            <div class="toggle">
-               <label for="toggle" class="label title-m">Ik ben</label>
-               <input id="sporty" type="radio" class="tab" name="j" value="sporty">
-               <label class="label first" for="sporty" class="radio-inline">Sportief</label>
-               <input id="lazy" type="radio" class="tab" name="j" value="lazy">
-               <label class="label last" for="lazy" class="radio-inline">Niet sportief</label>
-            </div>
+                <div class="toggle">
+                   <label for="toggle" class="label title-m">Ik ben</label>
+                   <input id="sporty" type="radio" class="tab" name="j" value="sporty">
+                   <label class="label first" for="sporty" class="radio-inline">Sportief</label>
+                   <input id="lazy" type="radio" class="tab" name="j" value="lazy">
+                   <label class="label last" for="lazy" class="radio-inline">Niet sportief</label>
+                </div>
 
-            <button class="hide" name="back" onclick="previousStep()">Terug</button>
-            <button class="hide" name="next" onclick="nextStep()">Verder</button>
-            <input type="submit" name="submit" value="Match mij!" onclick="">
-            <div class="bullet-container"></div>
-        </fieldset>
+                <a href="#" class="hide" name="back" onclick="previousStep()">Terug</a href="#">
+                <a href="#" class="hide" name="next" onclick="nextStep()">Verder</a href="#">
+                <input type="submit" name="submit" value="Match mij!" onclick="">
+                <div class="bullet-container"></div>
+            </fieldset>
+        </form>
     </div>
 <% include partials/footer %>

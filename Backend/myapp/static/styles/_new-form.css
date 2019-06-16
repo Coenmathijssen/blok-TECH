@@ -729,8 +729,29 @@ footer .navigation {
     footer .navigation a svg {
       margin: auto; }
 
+.personality nav.navigation {
+  display: flex;
+  padding: 2vh 1em 1vh;
+  justify-content: space-between; }
+  .personality nav.navigation a {
+    position: relative;
+    font-family: Nexa Light, Arial, sans-serif;
+    display: flex; }
+    .personality nav.navigation a span {
+      position: relative;
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin-right: 5px;
+      background-color: #5BB8B8;
+      border-radius: 16%; }
+      .personality nav.navigation a span img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
 .personality h1.title-xl {
-  margin: 2vh 1em 0;
+  margin: 0 1em;
   width: calc(100% - 2em);
   text-align: center; }
 .personality p.body-m {
@@ -741,7 +762,7 @@ footer .navigation {
   margin: 0 1em;
   width: calc(100% - 2em);
   position: absolute;
-  top: 23vh;
+  top: 28vh;
   background-color: #FFFFFF;
   border-radius: 16px; }
   .personality .form-wrapper .hide {
@@ -772,7 +793,8 @@ footer .navigation {
       margin-bottom: 2vh;
       color: #147A9A; }
     .personality .form-wrapper fieldset input,
-    .personality .form-wrapper fieldset button {
+    .personality .form-wrapper fieldset button,
+    .personality .form-wrapper fieldset a {
       display: block;
       width: 100%;
       height: 20px;
@@ -794,11 +816,13 @@ footer .navigation {
       box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.3);
       border: solid 2px #F39CA9; }
     .personality .form-wrapper fieldset button,
+    .personality .form-wrapper fieldset a,
     .personality .form-wrapper fieldset input[type="submit"] {
       margin: 1vh 0;
       padding: 0.9em;
       line-height: 0.2em;
       font-family: Nexa Bold, Arial, sans-serif;
+      text-align: center;
       font-size: 1.25em;
       color: #FFFFFF;
       background: #F39CA9;
@@ -806,6 +830,8 @@ footer .navigation {
       border-radius: 16px;
       transition: all 0.3s; }
       .personality .form-wrapper fieldset button:hover, .personality .form-wrapper fieldset button:active,
+      .personality .form-wrapper fieldset a:hover,
+      .personality .form-wrapper fieldset a:active,
       .personality .form-wrapper fieldset input[type="submit"]:hover,
       .personality .form-wrapper fieldset input[type="submit"]:active {
         box-shadow: none; }
