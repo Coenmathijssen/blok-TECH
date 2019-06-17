@@ -6,8 +6,8 @@ const buttons = document.getElementsByTagName('a')
 
 // Checking the active fieldset with formNumber
 let formNumber = 0
-let fieldset = formPart[formNumber]
-fieldset.className = 'show'
+let formPartActive = formPart[formNumber]
+formPartActive.className = 'show'
 
 // Checks the amount of fieldsets and duplicates the HTML string for the bullet as many times  as there are fieldsets
 let bulletNumber = "<div class='bullet'></div>"
@@ -18,7 +18,7 @@ for (let i = 1; i < formLength; i++) {
   // Hide the fieldsets (formParts) if the Javascript is running
   formPart[i].className = 'hide'
 
-  // Changes the hide class for show to display the buttons if the Javascript is running
+  // Changes the hide class to show to display the buttons if the Javascript is running
   for (let x = 0; x < buttons.length; x++) {
     buttons[x].className = 'show'
   }
@@ -36,26 +36,29 @@ document.getElementsByName('back')[0].className = 'hide'
 document.getElementsByName('next')[bulletContainer.length - 1].className = 'hide'
 
 // Makes the first dot active
-const bullet = document.getElementsByClassName('bullet')
-bullet[formNumber].className += ' bullet-active'
+const bullets = document.getElementsByClassName('bullet')
+bullets[formNumber].className += ' bullet-active'
 
 // Function to go to the next fieldset (formPart) and change the bullet active to the next one
 function nextStep () {
-  fieldset = document.querySelectorAll('fieldset')[formNumber]
+  let fieldset = document.querySelectorAll('fieldset')[formNumber]
 
-  // Hides the current fieldset and reveales the next one with the class show
+  // Hides the current fieldset and reveales the NEXT one with the class show
   fieldset.className = 'hide'
   formNumber = formNumber + 1
   fieldset = formPart[formNumber]
   fieldset.className = 'show'
 
   // Makes the next bullet active
-  var bulletRefresh = formNumber * formLength + formNumber
-  bullet[bulletRefresh].className += ' bullet-active'
+  const bulletAdd = formNumber * formLength + formNumber // Multiplies the number with the formLength to start counting on the right fieldset
+  bullets[bulletAdd].className += ' bullet-active'
 }
 
-// Hides the current fieldset and reveales the previous one with the class show
+// Hides the current fieldset and reveales the PREVIOUS one with the class show
 function previousStep () {
+  const bulletDelete = formNumber * formLength + formNumber // Multiplies the number with the formLength to start counting on the right fieldset
+  bullets[bulletDelete].classList.remove('bullet-active')
+
   formPart[formNumber].className = 'hide'
   formNumber = formNumber - 1
   formPart[formNumber].className = 'show'
