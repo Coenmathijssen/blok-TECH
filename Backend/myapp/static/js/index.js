@@ -1,3 +1,18 @@
+///// PROGRESSIVE DISCLOSURE /////
+const extrovertAppear = document.getElementsByClassName('container')[0]
+extrovertAppear.className += ' appear'
+
+const fireAppear = () => {
+  extrovertAppear.className += ' checked'
+}
+
+const appear = document.getElementsByClassName('fireAppear')
+
+Array.prototype.forEach.call(appear, (item) => {
+  item.addEventListener('click', fireAppear)
+})
+
+///// THE FORM IN MULTIPLE STEPS /////
 // Selecting every fieldset available
 const formPart = document.getElementsByTagName('fieldset')
 
@@ -40,7 +55,7 @@ const bullets = document.getElementsByClassName('bullet')
 bullets[formNumber].className += ' bullet-active'
 
 // Function to go to the next fieldset (formPart) and change the bullet active to the next one
-function nextStep () {
+const nextStep = () => {
   let fieldset = document.querySelectorAll('fieldset')[formNumber]
 
   // Hides the current fieldset and reveales the NEXT one with the class show
@@ -55,11 +70,24 @@ function nextStep () {
 }
 
 // Hides the current fieldset and reveales the PREVIOUS one with the class show
-function previousStep () {
+const previousStep = () => {
+  console.log('running')
   const bulletDelete = formNumber * formLength + formNumber // Multiplies the number with the formLength to start counting on the right fieldset
   bullets[bulletDelete].classList.remove('bullet-active')
 
   formPart[formNumber].className = 'hide'
   formNumber = formNumber - 1
   formPart[formNumber].className = 'show'
-};
+}
+
+// Get the back and previous buttons and run corresponding functions when clicked
+const previousButton = document.getElementsByName('back')
+const nextButton = document.getElementsByName('next')
+
+Array.prototype.forEach.call(previousButton, (item) => {
+  item.addEventListener('click', previousStep)
+})
+
+Array.prototype.forEach.call(nextButton, (item) => {
+  item.addEventListener('click', nextStep)
+})

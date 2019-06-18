@@ -7,6 +7,8 @@
 @import 'footer-nav';
 
 .personality {
+  margin-bottom: 40em;
+
   nav.navigation {
     display: flex;
     padding: 2vh 1em 1vh;
@@ -100,6 +102,23 @@
         color: $blue;
       }
 
+      .container textarea {
+        margin-bottom: 1.5em;
+      }
+
+      .appear {
+        height: 1px;
+        opacity: 0;
+        transition: all 0.5s ease;
+
+        &.checked {
+          height: 165px;
+          opacity: 1;
+        }
+
+
+      }
+
       input,
       button,
       a {
@@ -108,7 +127,7 @@
         height: 20px;
         margin: 15px 0px;
       }
-      input[type="text"], input[type="email"] {
+      input[type="text"], input[type="email"], textarea {
         font-size: 0.94em;
         line-height: 1.2em;
         font-family: Avenir Book, Arial, sans-serif;
