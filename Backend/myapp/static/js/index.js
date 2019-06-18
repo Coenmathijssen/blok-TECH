@@ -42,8 +42,7 @@ for (let i = 1; i < formLength; i++) {
 // Checks the amount of bulletContainers and injects the bullets necessery (see the loop above) into each one
 const bulletContainer = document.getElementsByClassName('bullet-container')
 for (let i = 0; i < bulletContainer.length; i++) {
-  const bulletContainerCount = bulletContainer[i]
-  bulletContainerCount.innerHTML = bulletNumber
+  bulletContainer[i].innerHTML = bulletNumber
 }
 
 // Removes the previous button on first fieldset and removes the next buton on the last fieldset
@@ -56,13 +55,10 @@ bullets[formNumber].className += ' bullet-active'
 
 // Function to go to the next fieldset (formPart) and change the bullet active to the next one
 const nextStep = () => {
-  let fieldset = document.querySelectorAll('fieldset')[formNumber]
-
   // Hides the current fieldset and reveales the NEXT one with the class show
-  fieldset.className = 'hide'
+  formPart[formNumber].className = 'hide'
   formNumber = formNumber + 1
-  fieldset = formPart[formNumber]
-  fieldset.className = 'show'
+  formPart[formNumber].className = 'show'
 
   // Makes the next bullet active
   const bulletAdd = formNumber * formLength + formNumber // Multiplies the number with the formLength to start counting on the right fieldset
